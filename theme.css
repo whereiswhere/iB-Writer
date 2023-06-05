@@ -92,12 +92,7 @@ body {
   --table-row-last-border-width: 1px;
   --line-height-normal: 1.6;
   --blockquote-border-color: clear;
-  /* --tag-background: var(--my-accent-color-dark); */
-  /* --tag-background-hover: var(--indicator-color); */
   --file-line-width: 750px;
-
-  --nav-item-padding: 6px;
-  /* --nav-item-parent-padding: 5px !important; */
 }
 
 .nav-folder-title,
@@ -110,7 +105,7 @@ body {
 }
 
 .nav-files-container {
-  --size-4-6: 12px !important;
+  --size-4-6: 10px !important;
 }
 
 .mod-root .workspace-tab-header-container .is-active {
@@ -251,6 +246,15 @@ table th:nth-of-type(5) {
 .theme-dark .HyperMD-codeblock,
 .theme-dark .markdown-rendered pre {
   background-color: var(--code-block-background-color-dark) !important;
+}
+
+.tree-item-children .nav-folder-children {
+  /* margin-bottom: 5px !important; */
+  border-left: none !important;
+}
+
+.nav-folder-title {
+  font-weight: bold !important;
 }
 
 /* AS A SNIPPET */
