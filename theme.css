@@ -108,6 +108,14 @@ body {
   --size-4-6: 10px !important;
 }
 
+/* .markdown-source-view.mod-cm6.is-readable-line-width .cm-content {
+  max-width: 600px;
+} */
+
+.markdown-preview-view.is-readable-line-width .markdown-preview-sizer {
+  max-width: 660px;
+}
+
 .mod-root .workspace-tab-header-container .is-active {
   border-bottom: 2px solid var(--indicator-color);
 }
