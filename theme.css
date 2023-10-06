@@ -54,29 +54,44 @@
   --edit-view-background-color: rgb(247, 247, 247);
   --edit-view-background-color-dark: rgb(27, 26, 27);
 
-  --nav-background-color: rgb(252, 252, 252);
-  --nav-background-color-dark: rgb(16, 16, 16);
+  --nav-background-color: #fdfdfd;
+  --nav-background-color-dark: #141414;
+  --nav-separator-color: #f0f0f0;
+  --nav-separator-color-dark: #1f1f1f;
 
   --code-block-background-color: rgb(240, 240, 240);
   --code-block-background-color-dark: rgb(38, 37, 38);
 
+  --nav-activer-color: #cbcdcf;
+  --nav-activer-color-dark: #404144;
+
   --text-color: rgb(26, 26, 26);
   --text-color-dark: rgb(204, 204, 204);
   --indicator-color: rgb(0, 191, 255);
+
+  --hashtag-underline-color: #b4b3b0;
+  --hashtag-underline-color-dark: #7a7a79;
+
   caret-color: var(--indicator-color);
 }
 
 body {
-  --interactive-accent: var(--indicator-color);
+  --interactive-accent: var(--nav-activer-color) !important;
   --font-text-theme: "iA Writer Duo V";
   --font-interface-override: "iA Writer Quattro V";
   --font-monospace-theme: "iA Writer Mono V";
-  --nav-item-background-active: var(--indicator-color);
+  --nav-item-background-active: var(--nav-activer-color);
   --blockquote-font-style: italic;
   --font-text-size: 1.125rem !important;
   --table-header-size: 0.93rem;
   --table-text-size: 0.93rem;
   --embed-block-shadow-hover: clear;
+  --list-marker-color-collapsed: var(--text-color);
+  --collapse-icon-color-collapsed: var(--text-color);
+  --tag-background: clear;
+  --tag-color: var(--text-color);
+  /* --link-color: var(--text-color); */
+  --text-accent-hover: #0591cf;
 
   --h1-size: 1.4rem;
   --h2-size: 1.3rem;
@@ -107,10 +122,6 @@ body {
 .nav-files-container {
   --size-4-6: 10px !important;
 }
-
-/* .markdown-source-view.mod-cm6.is-readable-line-width .cm-content {
-  max-width: 600px;
-} */
 
 .markdown-preview-view.is-readable-line-width .markdown-preview-sizer {
   max-width: 660px;
@@ -149,7 +160,27 @@ h3 {
 }
 
 .cm-hashtag,
+.cm-underline,
+a.internal-link,
 a.tag {
+  /* This is for background color of Movbile device */
+  background-color: rgba(255, 255, 255, 0);
+
+  text-decoration: underline;
+}
+
+.cm-hashtag,
+.cm-underline {
+  text-decoration-color: var(--hashtag-underline-color) !important;
+}
+
+a.internal-link,
+a.tag {
+  text-decoration-color: var(--text-color) !important;
+}
+
+a.tag:hover {
+  background-color: rgba(255, 255, 255, 0);
   text-decoration: underline;
 }
 
@@ -216,7 +247,7 @@ table th:nth-of-type(5) {
 
 .theme-light .nav-folder:not(:last-child),
 .theme-light .nav-file:not(:last-child) {
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--nav-separator-color);
 }
 
 .theme-light .markdown-rendered pre {
@@ -224,9 +255,15 @@ table th:nth-of-type(5) {
 }
 
 .theme-dark {
+  --interactive-accent: var(--nav-activer-color-dark) !important;
   --color-base-00: var(--edit-view-background-color-dark);
   --tab-background-active: var(--edit-view-background-color-dark);
+  --nav-item-background-active: var(--nav-activer-color-dark);
   --background-primary: var(--edit-view-background-color-dark);
+  --list-marker-color-collapsed: var(--text-color-dark);
+  --collapse-icon-color-collapsed: var(--text-color-dark);
+  --tag-color: var(--text-color-dark);
+  /* --link-color: var(--text-color-dark); */
 
   --color-base-10: var(--code-block-background-color-dark);
   --color-base-20: var(--nav-background-color-dark);
@@ -247,13 +284,33 @@ table th:nth-of-type(5) {
 }
 
 .theme-dark .nav-folder,
-.theme-dark .nav-file:not(:last-child) {
-  border-bottom: 1px solid #363636;
+.theme-dark .tree-item .nav-file:not(:last-child) {
+  border-bottom: 1px solid var(--nav-separator-color-dark);
 }
 
 .theme-dark .HyperMD-codeblock,
 .theme-dark .markdown-rendered pre {
   background-color: var(--code-block-background-color-dark) !important;
+}
+
+.theme-dark .cm-hashtag,
+.theme-dark .cm-underline {
+  color: var(--text-color-dark);
+  text-decoration-color: var(--hashtag-underline-color-dark) !important;
+}
+
+.theme-dark a.internal-link,
+.theme-dark a.tag,
+.theme-dark a.external-link {
+  color: var(--text-color-dark);
+  text-decoration-color: var(--text-color-dark) !important;
+}
+
+.cm-underline:hover,
+a.internal-link:hover,
+a.external-link:hover {
+  color: var(--text-accent-hover) !important;
+  text-decoration-color: var(--text-accent-hover) !important;
 }
 
 .tree-item-children .nav-folder-children {
