@@ -67,7 +67,7 @@
 
   --text-color: rgb(26, 26, 26);
   --text-color-dark: rgb(204, 204, 204);
-  --indicator-color: rgb(0, 191, 255);
+  --indicator-color: #00bfff;
 
   --hashtag-underline-color: #b4b3b0;
   --hashtag-underline-color-dark: #7a7a79;
@@ -227,9 +227,9 @@ table th:nth-of-type(5) {
   --color-base-20: var(--nav-background-color);
   --color-base-100: var(--text-color);
   --color-accent: var(--text-color);
-  --accent-h: 190;
-  --accent-s: 89%;
-  --accent-l: 79%;
+  --accent-h: 201;
+  --accent-s: 93%;
+  --accent-l: 66%;
   --text-selection: var(--my-accent-color);
 
   --tab-background-active: var(--edit-view-background-color);
