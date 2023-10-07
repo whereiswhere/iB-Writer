@@ -179,6 +179,14 @@ a.tag {
   text-decoration-color: var(--text-color) !important;
 }
 
+.cm-active .cm-link:not(.cm-formatting-link) {
+  color: var(--text-color) !important;
+}
+
+.cm-url {
+  color: #b5b3b0 !important;
+}
+
 a.tag:hover {
   background-color: rgba(255, 255, 255, 0);
   text-decoration: underline;
@@ -304,6 +312,14 @@ table th:nth-of-type(5) {
 .theme-dark a.external-link {
   color: var(--text-color-dark);
   text-decoration-color: var(--text-color-dark) !important;
+}
+
+.theme-dark .cm-active .cm-link:not(.cm-formatting-link) {
+  color: var(--text-color-dark) !important;
+}
+
+.theme-dark .cm-url {
+  color: #7b7a78 !important;
 }
 
 .cm-underline:hover,
