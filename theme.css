@@ -72,6 +72,9 @@
   --hashtag-underline-color: #b4b3b0;
   --hashtag-underline-color-dark: #7a7a79;
 
+  --list-done-color: #b4b3b0;
+  --list-done-color-dark: #7b7a78;
+
   caret-color: var(--indicator-color);
 }
 
@@ -90,7 +93,11 @@ body {
   --collapse-icon-color-collapsed: var(--text-color);
   --tag-background: clear;
   --tag-color: var(--text-color);
-  /* --link-color: var(--text-color); */
+
+  --checkbox-border-color: var(--text-color);
+  --checklist-done-color: var(--list-done-color);
+  --checkbox-color: clear;
+
   --text-accent-hover: #0591cf;
 
   --h1-size: 1.4rem;
@@ -179,6 +186,14 @@ a.tag {
   text-decoration-color: var(--text-color) !important;
 }
 
+[data-task="x"] .cm-underline,
+[data-task="x"] .cm-hashtag,
+li[data-task="x"] a.internal-link,
+li[data-task="x"] a.tag {
+  color: var(--list-done-color);
+  text-decoration-color: var(--list-done-color) !important;
+}
+
 .cm-active .cm-link:not(.cm-formatting-link) {
   color: var(--text-color) !important;
 }
@@ -229,6 +244,18 @@ table th:nth-of-type(5) {
   text-align: center;
 }
 
+input[type="checkbox"]:checked:after {
+  background-color: var(--list-done-color);
+}
+
+.task-list-item-checkbox[data-task="x"] {
+  border-color: var(--list-done-color) !important;
+}
+
+.task-list-item-checkbox[checked] {
+  border-color: var(--list-done-color) !important;
+}
+
 .theme-light {
   --color-base-00: var(--edit-view-background-color);
   --color-base-10: var(--code-block-background-color);
@@ -271,7 +298,10 @@ table th:nth-of-type(5) {
   --list-marker-color-collapsed: var(--text-color-dark);
   --collapse-icon-color-collapsed: var(--text-color-dark);
   --tag-color: var(--text-color-dark);
-  /* --link-color: var(--text-color-dark); */
+
+  --checkbox-border-color: var(--text-color-dark);
+  --checklist-done-color: var(--list-done-color-dark);
+  /* --checkbox-color: clear; */
 
   --color-base-10: var(--code-block-background-color-dark);
   --color-base-20: var(--nav-background-color-dark);
@@ -307,6 +337,14 @@ table th:nth-of-type(5) {
   text-decoration-color: var(--hashtag-underline-color-dark) !important;
 }
 
+.theme-dark [data-task="x"] .cm-underline,
+.theme-dark [data-task="x"] .cm-hashtag,
+.theme-dark li[data-task="x"] a.internal-link,
+.theme-dark li[data-task="x"] a.tag {
+  color: var(--list-done-color-dark);
+  text-decoration-color: var(--list-done-color-dark) !important;
+}
+
 .theme-dark a.internal-link,
 .theme-dark a.tag,
 .theme-dark a.external-link {
@@ -320,6 +358,18 @@ table th:nth-of-type(5) {
 
 .theme-dark .cm-url {
   color: #7b7a78 !important;
+}
+
+.theme-dark input[type="checkbox"]:checked:after {
+  background-color: var(--list-done-color-dark);
+}
+
+.theme-dark .task-list-item-checkbox[data-task="x"] {
+  border-color: var(--list-done-color-dark) !important;
+}
+
+.theme-dark .task-list-item-checkbox[checked] {
+  border-color: var(--list-done-color-dark) !important;
 }
 
 .cm-underline:hover,
@@ -337,16 +387,3 @@ a.external-link:hover {
 .nav-folder-title {
   font-weight: bold !important;
 }
-
-/* AS A SNIPPET */
-/* .workspace-ribbon,
-.nav-header {
-  display: none !important;
-}
-
-.is-hidden-frameless:not(.is-fullscreen)
-  .workspace-tabs.mod-top-left-space
-  .workspace-tab-header-container:before {
-  width: 44px;
-  position: relative;
-} */
