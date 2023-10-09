@@ -117,6 +117,14 @@ body {
   --file-line-width: 750px;
 }
 
+.workspace-tab-container .is-active .workspace-tab-header-inner-title {
+  font-weight: bolder !important;
+}
+
+.workspace-tab-container .workspace-tab-header-inner {
+  border-right: 1px dashed var(--my-accent-color);
+}
+
 .nav-folder-title,
 .nav-file-title {
   margin: 1px auto;
@@ -311,6 +319,10 @@ input[type="checkbox"]:checked:after {
   --accent-s: 61.5%;
   --accent-l: 20.4%;
   --text-selection: var(--my-accent-color-dark);
+}
+
+.theme-dark .workspace-tab-container .workspace-tab-header-inner {
+  border-right: 1px dashed var(--my-accent-color-dark);
 }
 
 .theme-dark .markdown-source-view {
