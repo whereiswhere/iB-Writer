@@ -1,0 +1,25 @@
+/* ----------- */
+/* Hide Left Ribbon Bar */
+.workspace-ribbon {
+  display: none;
+}
+
+/* ----------- */
+/* Hide Post List Nav Header  */
+.nav-header {
+  display: none;
+}
+.is-hidden-frameless:not(.is-fullscreen)
+  .workspace-tabs.mod-top-left-space
+  .workspace-tab-header-container:before {
+  width: 44px;
+  position: relative;
+}
+
+/* ----------- */
+/* make active editor window width spreads to max width when use stack tabs */
+/* or, if you want to make all stacked windows open side by side, change the value 100% to 100px */
+
+body {
+  --tab-stacked-pane-width: 100%;
+}
